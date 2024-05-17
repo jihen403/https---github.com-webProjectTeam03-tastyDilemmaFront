@@ -257,7 +257,7 @@ body {
   font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
   line-height: var(--bs-body-line-height);
-  color: var(--bs-body-color);
+  color: #6d6e72;
   text-align: var(--bs-body-text-align);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -3799,6 +3799,7 @@ textarea.form-control-lg {
 .btn-group-vertical > .btn {
   position: relative;
   flex: 1 1 auto;
+  border-radius: 50rem;
 }
 .btn-group > .btn-check:checked + .btn,
 .btn-group > .btn-check:focus + .btn,
@@ -12153,7 +12154,7 @@ textarea.form-control-lg {
 .btn {
   position: relative;
   color: #7b8ab8;
-  border-radius: 50rem;
+  border-radius: 0.55rem;
   background-color: #d9e3f1;
   border: none;
   box-shadow: 5px 5px 10px rgba(55, 94, 148, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.4);
