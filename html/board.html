@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판 목록</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/board.css">
+    <script type="text/javascript" src="js\common.js"></script>
+</head>
+<body>
+    <header id="header">
+        <script>loadHTML("./common/header.html");</script>
+    </header>
+    <div class="container">
+        <h1>게시판 목록</h1>
+        <!-- 검색 폼 -->
+        <form class="search-box" action="" method="get">
+            <input class="search-txt" type="text" name="" placeholder="검색어를 입력하세요.">
+            <button class="search-btn" type="submit">검색</button>
+        </form>
+        <img src="../../images/보노보노.jpg" alt="bonobono" style="width: 200px;height: 200px;">
+        <img src="../../images/다운로드.jpg" alt="chu" style="width: 300px;height: 250px;">
+        <img src="../../images/네즈코.jpg" alt="prince" style="width: 200px;height: 200px;">
+        <div class="btn-group-vertical">
+            <button type="button" class="btn btn-primary">글쓰기</button>
+        </div>
+            <!-- 게시물 목록 -->
+        <div class="post">
+            <h2 class="post-title">[맛집 같이 갈 유저 모집] 서울</h2>
+            <p class="post-info">고기먹고싶어요~~</p>
+            <p class="post-info">작성자: 8905783 | 작성 시간: 14:29 | 조회수: 152,453</p>
+        </div>
+        <div class="post">
+            <h2 class="post-title">[유저의 맛집 리뷰] 금돼지식당</h2>
+            <p class="post-info">★★★★☆ 그냥 삼겹살이네요</p>
+            <p class="post-info">작성자: 96885843 | 작성 시간: 14:29 | 조회수: 2,434</p>
+        </div>
+        <div class="post">
+            <h2 class="post-title">[유저 맛집추천] 종로 영춘옥</h2>
+            <p class="post-info">선지 해장국이 술을 안마셔도 해장이 됩니다</p>
+            <p class="post-info">작성자: 12345678 | 작성 시간: 14:29 | 조회수: 1,867,342</p>
+        </div>
+        <!-- 페이지 네비게이션 -->
+        <div>
+            <ul class="pagination pagination-sm">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#">&laquo;</a>
+                </li>
+                <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#">2</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#">3</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#">4</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#">5</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#">&raquo;</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <footer id="footer">
+        <script>loadHTML("./common/footer.html");</script>
+    </footer>
+</body>
+</html>
