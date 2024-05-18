@@ -9,6 +9,19 @@ main {
   background-color: #fff;
 }
 
+.main_container ul, .main_container ol {
+  margin: 0px;
+  padding: 0px;
+}
+
+.main_container ul li, .main_container ol li {
+  list-style: none;
+}
+
+.main_container h6 {
+  font-weight: 600;
+}
+
 .img_container {
   min-height: 144px;
   background: url("../images/detail_temp.jpg") 50% 50%;
@@ -63,4 +76,21 @@ main {
 .breadcrumb-item + .breadcrumb-item::before {
   color: #333;
   content: var(--bs-breadcrumb-divider, "│") /* rtl: var(--bs-breadcrumb-divider, "│") */;
+}
+
+.menu_list li {
+  display: flex;
+  padding: 12px 0;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.menu_list .food_image {
+  width: 109px;
+  height: auto;
+  padding-right: 16px;
+}
+
+.menu_list .food_image img {
+  width: 100%;
+  height: auto;
 }
