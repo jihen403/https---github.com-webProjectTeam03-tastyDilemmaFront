@@ -11,6 +11,3 @@ function loginWithKakao() {
       }
   });
 }
-
-// Kakao 로그인 버튼에 클릭 이벤트 추가
-document.getElementById('kakao-login-btn').addEventListener('click', loginWithKakao);
