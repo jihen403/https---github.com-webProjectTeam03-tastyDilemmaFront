@@ -4,40 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="/css/main_page.css">
+  <link rel="stylesheet" href="/css/modal.css"> <!-- 모달 CSS 파일 추가 -->
   <script type="text/javascript" src="/js/common.js"></script>
   <title>tastyDilemmaFront</title>
-  <style>
-    /* 선택버튼 높낮이 */
-    #regionSelector {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 50vh; /* 필요에 따라 높이를 조정할 수 있습니다 */
-      gap: 20px; /* 버튼 사이의 간격 */
-    }
-  </style>
 </head>
 <body>
   <header id="header">
     <script>loadHTML("/src/common/header.html");</script>
   </header>
   
+  <!-- 모달 창 -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <!-- 여기에 모달 내용 추가 -->
+
+      <!-- 외부 HTML 파일을 불러와도 됩니다. -->
+      <iframe src="/src/recommandation/modal_content.html" frameborder="0" style="width: 100%; height: 400px;"></iframe>
+    </div>
+  </div>
+
   <!-- 지역선택 버튼 시작 -->
   <div id="regionSelector">
-    <button type="button" class="btn btn-primary btn-lg btn-outline-info">내 위치 </button>
-    <button onclick="selectRegion()" type="button" class="btn btn-primary btn-lg btn-outline-info">지역 선택 </button>
+      <!-- 문구 추가 -->
+  <div id="regionSelectorText">
+    <p><span class="color14">Hear's</span><span class="color1">T</span><span class="color2">A</span><span class="color3">S</span><span class="color4">T</span><span class="color5">Y</span> <span class="color6">D</span><span class="color7">I</span><span class="color9">L</span><span class="color10">E</span><span class="color11">M</span><span class="color12">M</span><span class="color13">A</span></p>
+
+  </div>
+    <div class="buttons"> <!-- 추가: 버튼들을 감싸는 div 추가 -->
+      <button type="button" class="btn btn-primary btn-lg btn-outline-info"> 내 위치 </button>
+      <button onclick="openModal()" type="button" class="btn btn-primary btn-lg btn-outline-info"> 지역 선택 </button>
+    </div>
   </div>
   <!-- 지역선택 버튼 끝 -->
   <footer class="text-lg-center py-lg-2" id="footer">
     <script>loadHTML("/src/common/footer.html");</script>
   </footer>
 
-  <script>
-    function selectRegion() {
-      // 여기에 지역 선택 버튼을 클릭했을 때 실행할 코드를 작성하세요.
-      alert("지역 선택 버튼이 클릭되었습니다.");
-      window.location.href="/src/area_choose.html"
-    }
-  </script>
+  <script src="/js/modal.js"></script> <!-- 모달 JavaScript 파일 추가 -->
 </body>
 </html>
