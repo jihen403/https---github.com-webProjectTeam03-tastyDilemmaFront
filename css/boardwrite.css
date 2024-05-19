@@ -1,16 +1,7 @@
 label, input[type="text"], textarea, input[type="file"], button {
   font-size: 20px; /* 원하는 폰트 크기로 설정 */
 }
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  flex-direction: column;
-}
+
 .container {
   max-width: 800px;
   width: 100%;
@@ -59,4 +50,55 @@ button[type="submit"] {
   width: 100%;
   max-width: 600px;
   margin-bottom: 5px;
+}
+
+/* 제목 입력 박스 크기 조정 */
+.title-input {
+  max-width: 50%; /* 제목 입력 박스의 너비를 50%로 설정 */
+}
+
+/* 내용 입력 박스 크기 조정 */
+#ucontent {
+  width: 100%; /* 내용 입력 박스의 너비를 100%로 설정 */
+  max-width: 800px; /* 최대 너비를 800px로 설정 */
+  height: 300px; /* 높이 설정 */
+  margin-left: auto; /* 왼쪽 정렬 */
+}
+
+/* 부모 요소의 스타일 조정 */
+#in_content {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start; /* 왼쪽 정렬 */
+}
+.container {
+  background: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+h1 {
+  font-size: 2rem;
+  color: #343a40;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.btn-secondary {
+  background-color: #6cb3ff;
+  border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+  background-color: #ffffff;
+  border-color: #000000;
 }
