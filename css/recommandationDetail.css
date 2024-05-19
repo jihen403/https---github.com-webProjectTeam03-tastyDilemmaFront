@@ -20,7 +20,16 @@ main {
 
 .main_container h6 {
   font-weight: 600;
+  letter-spacing: -2px;
 }
+
+.main_container .map h6 {
+  margin: 10px 0;
+}
+
+.main_container .map h6:first-child {
+  margin: 0 0 5px;
+} 
 
 .img_container {
   min-height: 144px;
@@ -93,4 +102,45 @@ main {
 .menu_list .food_image img {
   width: 100%;
   height: auto;
+}
+
+.review_list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.review_list li {
+  width: 205px;
+  border: 1px solid rgba(230, 230, 230, 1);
+}
+
+.review_list .review_container {
+  margin: 0 10px 10px;
+}
+
+.review_list li .reivew_title {
+  display: block;
+  margin: 4px 0 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: -2px;
+}
+
+.review_list li .reivew_content {
+  display: -webkit-box;
+  overflow: hidden;
+  max-height: calc(100% - 78px);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  text-overflow: ellipsis;
+}
+
+.review_list li .user_name {
+  display: inline-block;
+  max-width: 90px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
 }
