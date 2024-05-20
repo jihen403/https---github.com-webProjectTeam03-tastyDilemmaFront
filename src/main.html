@@ -41,6 +41,19 @@
     <script>loadHTML("/src/common/footer.html");</script>
   </footer>
 
-  <script src="/js/modal.js"></script> <!-- 모달 JavaScript 파일 추가 -->
+  <script type="text/javascript" src="/js/modal.js"></script> <!-- 모달 JavaScript 파일 추가 -->
+
+  <script>// 메시지를 수신하여 처리하는 함수 정의
+    function handleMessage(event) {
+        if (event.data === 'closeIframe') {
+            // 특정 div의 display 속성을 none으로 변경
+            document.getElementById('myModal').style.display = 'none';
+        }
+    }
+
+    // 메시지 이벤트 리스너 등록
+    window.addEventListener('message', handleMessage);
+    </script>
+
 </body>
 </html>
