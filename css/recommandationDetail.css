@@ -37,11 +37,11 @@ main {
   letter-spacing: -2px;
 }
 
-.main_container .map h6 {
+.main_container .location h6 {
   margin: 10px 0;
 }
 
-.main_container .map h6:first-child {
+.main_container .location h6:first-child {
   margin: 0 0 5px;
 } 
 

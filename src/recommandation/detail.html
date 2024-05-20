@@ -10,31 +10,6 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=63121fc405ec95e17ac95ea8469893f8"></script>
-    <script>
-      window.onload = function() {
-              // Kakao 지도 API 초기화
-              var mapContainer = document.getElementById('map'),
-                  mapOption = {
-                      center: new kakao.maps.LatLng(126.990287359605, 37.5736751000679), // 지도 중심 좌표 설정
-                      level: 3 // 지도 확대 레벨 설정
-                  };
-  
-              // 지도를 생성합니다
-              var map = new kakao.maps.Map(mapContainer, mapOption);
-  
-              // 마커가 표시될 위치입니다
-              var markerPosition  = new kakao.maps.LatLng(126.990287359605, 37.5736751000679); // 표시할 위도와 경도
-  
-              // 마커를 생성합니다
-              var marker = new kakao.maps.Marker({
-                  position: markerPosition
-              });
-  
-              // 마커가 지도 위에 표시되도록 설정합니다
-              marker.setMap(map);
-          };
-    </script>
 </head>
 <body>
   <header id="header">
@@ -93,27 +68,27 @@
                 지번 | 익선동 166-21
               </span>
             </p>
-            <p>
+            <!-- <p>
               <em class="hour">영업전</em>
               <span>
                 매일 12:00 ~ 22:00 <br>
                 월~금 휴게시간 15:00 ~ 16:00
               </span>
-            </p>
-            <p>
+            </p> -->
+            <!-- <p>
               <em class="insta">인스타그램</em>
               <a href="http://www.instagram.com/banjoo__iksun" target="_blank" rel="noopener noreferrer">
                 http://www.instagram.com/banjoo__iksu
               </a>
-            </p>
+            </p> -->
             <p>
               <em class="num">대표번호</em>
               <span>02-529-3979</span>
             </p>
-            <p>
+            <!-- <p>
               <em class="reservation">예약</em>
               예약가능
-            </p>
+            </p> -->
 
           </div>
           <div class="tab-pane fade active show" id="review" role="tabpanel">
@@ -139,20 +114,10 @@
               </li>
             </ul>
           </div>
-          <div class="tab-pane fade map active show" id="location" role="tabpanel">
+          <div class="tab-pane fade location active show" id="location" role="tabpanel">
             <h6 class="text-dark">찾아가는 길</h6>
-            <div class="map_cotent" id="map">
+            <div style="width: 100%; height: 350px;" class="map_cotent" id="map">
             </div>
-            <script>
-              var container = document.getElementById('map');
-              var options = {
-                      center: new kakao.maps.LatLng(126.990287359605, 37.5736751000679), // 지도 중심 좌표 설정
-                      level: 3 // 지도 확대 레벨 설정
-                  };
-              var map = new kakao.maps.Map(container, options);
-
-                map.relayout();
-            </script>
             <h6 class="text-dark">지하철 역</h6>
             <div>
               <ul class="subway_list">
@@ -207,7 +172,7 @@
   <footer class="text-lg-center py-lg-2" id="footer">
       <script>loadHTML("/src/common/footer.html");</script>
   </footer>
-  <script>
+  <script type="text/javascript">
     var swiper = new Swiper(".mySwiper", {
       slidesPerView: 3,
       spaceBetween: 30,
@@ -216,6 +181,35 @@
         clickable: true,
       },
     });
+  </script>
+  <script type="text/javascript">
+      let script = document.createElement('script');
+      script.src = '//dapi.kakao.com/v2/maps/sdk.js?appkey=4cde2cf0f9eeb480631c915d173de8b4&libraries=services,clusterer,drawing&autoload=false';
+      document.head.appendChild(script);
+
+      // 스크립트 로드 후 실행될 함수
+      script.onload = function() {
+          // 카카오 지도 API 사용 가능한 상태일 때 실행될 코드
+          kakao.maps.load(function() {
+            let container = document.getElementById('map');
+            let options = {
+              center: new kakao.maps.LatLng(37.5736751000679, 126.990287359605),
+              level: 3
+            };
+
+            let map = new kakao.maps.Map(container, options);
+            // 마커가 표시될 위치입니다 
+            let markerPosition  = new kakao.maps.LatLng(37.5736751000679, 126.990287359605); 
+
+            // 마커를 생성합니다
+            let marker = new kakao.maps.Marker({
+                position: markerPosition
+            });
+
+            // 마커가 지도 위에 표시되도록 설정합니다
+            marker.setMap(map);
+          });
+      };
   </script>
 </body>
 </html>

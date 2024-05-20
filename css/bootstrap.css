@@ -22,12 +22,6 @@
   
   font-weight: 300;
   
-  src: url(/fonts/NotoSansKr/NotoSansKR-Light.woff2) format('woff2'),
-  
-  url(/fonts/NotoSansKr/NotoSansKR-Light.woff) format('woff'),
-  
-  url(/fonts/NotoSansKr/NotoSansKR-Light.otf) format('opentype');
-  
 }
   
 @font-face {
@@ -36,14 +30,7 @@
   
   font-style: normal;
   
-  font-weight: 400;
-  
-  src: url(/fonts/NotoSansKr/NotoSansKR-Regular.woff2) format('woff2'),
-  
-  url(/fonts/NotoSansKr/NotoSansKR-Regular.woff) format('woff'),
-  
-  url(/fonts/NotoSansKr/NotoSansKR-Regular.otf) format('opentype');
-  
+  font-weight: 400;  
 }
   
 @font-face {
@@ -53,13 +40,6 @@
   font-style: normal;
   
   font-weight: 700;
-  
-  src: url(/fonts/NotoSansKr/NotoSansKR-Bold.woff2) format('woff2'),
-  
-  url(/fonts/NotoSansKr/NotoSansKR-Bold.woff) format('woff'),
-  
-  url(/fonts/NotoSansKr/NotoSansKR-Bold.otf) format('opentype');
-  
 }
 
 :root,
@@ -257,6 +237,7 @@ body {
   font-family: 'Noto Sans KR', sans-serif, var(--bs-body-font-family);
   font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
+  letter-spacing: -0.08rem;
   line-height: var(--bs-body-line-height);
   color: #6d6e72;
   text-align: var(--bs-body-text-align);
