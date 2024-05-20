@@ -1,3 +1,4 @@
+window.onload = function() {
 document.addEventListener("DOMContentLoaded", function() {
     // 마커를 클릭하면 장소명을 표출할 인포윈도우 입니다
     var infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
@@ -61,3 +62,4 @@ document.addEventListener("DOMContentLoaded", function() {
         radiusOverlay.setMap(map);
    }
 });
+};
