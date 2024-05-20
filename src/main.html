@@ -34,7 +34,6 @@
     <div class="buttons"> <!-- 추가: 버튼들을 감싸는 div 추가 -->
       <button type="button" class="btn btn-primary btn-lg btn-outline-info"> 내 위치 </button>
       <button onclick="openModal()" type="button" class="btn btn-primary btn-lg btn-outline-info"> 지역 선택 </button>
-      <a class="nav-link" href="/src/map_mylocation.html">게시판</a>
     </div>
   </div>
   <!-- 지역선택 버튼 끝 -->
@@ -42,6 +41,19 @@
     <script>loadHTML("/src/common/footer.html");</script>
   </footer>
 
-  <script src="/js/modal.js"></script> <!-- 모달 JavaScript 파일 추가 -->
+  <script type="text/javascript" src="/js/modal.js"></script> <!-- 모달 JavaScript 파일 추가 -->
+
+  <script>// 메시지를 수신하여 처리하는 함수 정의
+    function handleMessage(event) {
+        if (event.data === 'closeIframe') {
+            // 특정 div의 display 속성을 none으로 변경
+            document.getElementById('myModal').style.display = 'none';
+        }
+    }
+
+    // 메시지 이벤트 리스너 등록
+    window.addEventListener('message', handleMessage);
+    </script>
+
 </body>
 </html>

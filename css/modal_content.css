@@ -31,7 +31,7 @@ h2 {
   border-radius: 4px; /* 테두리 모서리의 굴곡 정도 설정 */
   padding: 10px 20px; /* 내부 여백 설정 (위아래 10px, 좌우 20px) */
   font-size: 16px; /* 글꼴 크기 설정 */
-  cursor: pointer; /* 마우스 커서 모양 설정 */
+
 }
 
 /* 취소 버튼 */
@@ -42,7 +42,7 @@ h2 {
   border-radius: 4px; /* 테두리 모서리의 굴곡 정도 설정 */
   padding: 10px 20px; /* 내부 여백 설정 (위아래 10px, 좌우 20px) */
   font-size: 16px; /* 글꼴 크기 설정 */
-  cursor: pointer; /* 마우스 커서 모양 설정 */
+
 }
 
 /* 버튼 컨테이너 */

@@ -10,7 +10,7 @@
 <body>
 
   <!-- 모달 창 -->
-  <div class="modal-content" id="myModal">
+  <div class="modal-content">
     <span class="close">&times;</span>
     <h2>지역 선택</h2>
     <form id="regionForm" class="region-form">
@@ -24,12 +24,22 @@
       </div>
       <div class="button-container">
         <button type="button" id="selectButton" class="btn btn-primary">선택</button>
-        <button type="button" id="cancelButton" class="btn btn-primary">취소</button>
+        <button onclick="closeModal()" type="button" id="cancelButton" class="btn btn-primary">취소</button>
       </div>
     </form>
   </div>
 
 <script src="/js/modal.js"></script> <!-- 모달 JavaScript 파일 추가 -->
 <script src="/js/location_data.js"></script> <!-- 구와 동 데이터를 관리하는 JavaScript 파일 추가 -->
+<script><!--부모 페이지로 메시지를 보내는 함수 정의-->
+  function sendMessageToParent(message) {
+      window.parent.postMessage(message, '*');
+  }
+  
+  // 닫기 버튼 클릭 이벤트 리스너 등록
+  document.getElementById('cancelButton').addEventListener('click', function() {
+      sendMessageToParent('closeIframe');
+  });</script>
+
 </body>
 </html>
