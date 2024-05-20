@@ -2,13 +2,15 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/board.css">
+    <script type="text/javascript" src="/js/common.js"></script>
     <title>게시물 수정</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>게시물 수정</h1>
+    <header id="header">
+        <script>loadHTML("/src/common/header.html");</script>
     </header>
     <div class="container">
         <form id="edit-form">
@@ -23,8 +25,8 @@
             <button type="submit">수정하기</button>
         </form>
     </div>
-    <footer>
-        <p>&copy; 2024 게시판 앱</p>
+    <footer id="footer">
+        <script>loadHTML("/src/common/footer.html");</script>
     </footer>
 </body>
 </html>

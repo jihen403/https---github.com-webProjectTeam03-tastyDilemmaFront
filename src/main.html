@@ -32,9 +32,8 @@
 
   </div>
     <div class="buttons"> <!-- 추가: 버튼들을 감싸는 div 추가 -->
-      <button type="button" class="btn btn-primary btn-lg btn-outline-info"> 내 위치 </button>
+      <button type="button" class="btn btn-primary btn-lg btn-outline-info" onclick="location.href='/src/map_mylocation.html'"> 내 위치 </button>
       <button onclick="openModal()" type="button" class="btn btn-primary btn-lg btn-outline-info"> 지역 선택 </button>
-      <a class="nav-link" href="/src/map_mylocation.html">게시판</a>
     </div>
   </div>
   <!-- 지역선택 버튼 끝 -->
@@ -42,6 +41,7 @@
     <script>loadHTML("/src/common/footer.html");</script>
   </footer>
 
-  <script src="/js/modal.js"></script> <!-- 모달 JavaScript 파일 추가 -->
+  <script type="text/javascript" src="/js/modal.js"></script> <!-- 모달 JavaScript 파일 추가 -->
+
 </body>
 </html>

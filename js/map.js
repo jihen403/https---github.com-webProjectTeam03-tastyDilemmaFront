@@ -1,4 +1,5 @@
 // 마커를 클릭하면 장소명을 표출할 인포윈도우 입니다
+window.onload = function() {
 var infowindow = new kakao.maps.InfoWindow({zIndex:1});
 
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
@@ -55,3 +56,4 @@ function displayMarker(place) {
     // 지도 중심을 무작위로 선택된 장소로 이동
     map.setCenter(new kakao.maps.LatLng(place.y, place.x));
 }
+};
