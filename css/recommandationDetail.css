@@ -3,10 +3,24 @@ main {
   background: #f3f3f3;
 }
 
+.btn_container {
+  display: flex;
+  justify-content: end;
+  height: 58px;
+  margin-bottom: 15px;
+}
+.btn_container .dislike_btn {
+  margin-left: 15px;
+}
+
+.btn_container .input-group {
+  width: 290px;
+  height: 100%;
+}
+
 .main_container {
   width: 800px;
   margin: 0 auto;
-  background-color: #fff;
 }
 
 .main_container ul, .main_container ol {
@@ -37,7 +51,7 @@ main {
 }
 
 .top_container {
-  margin-bottom: 40px;
+  background-color: #fff;
 }
 
 .title_container {
@@ -68,8 +82,11 @@ main {
   padding: 12px 0;
 }
 
-.tab-content {
+.tab-content > .tab-pane {
+  margin-bottom: 15px;
   padding: 25px 79px;
+  background-color: #fff;
+  border-radius: 5px;
 }
 
 .breadcrumb {
