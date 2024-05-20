@@ -9,165 +9,27 @@
 </head>
 <body>
 
-  <!-- 오버레이 -->
-<div class="overlay" id="overlay"></div>
-
-<!-- 모달 창 -->
-<div class="modal-content" id="myModal">
-  <span class="close">&times;</span>
-  <h2>지역 선택</h2>
-  <form id="regionForm" class="region-form">
-    <div class="form-group region-list">
-      <label for="selectRegion">구</label>
-      <select class="form-control" id="selectRegion">
-        <option value="강남구">강남구</option>
-        <option value="강동구">강동구</option>
-        <option value="강북구">강북구</option>
-        <option value="강서구">강서구</option>
-        <option value="관악구">관악구</option>
-        <option value="광진구">광진구</option>
-        <option value="구로구">구로구</option>
-        <option value="금천구">금천구</option>
-        <option value="노원구">노원구</option>
-        <option value="도봉구">도봉구</option>
-        <option value="동대문구">동대문구</option>
-        <option value="동작구">동작구</option>
-        <option value="마포구">마포구</option>
-        <option value="서대문구">서대문구</option>
-        <option value="서초구">서초구</option>
-        <option value="성동구">성동구</option>
-        <option value="성북구">성북구</option>
-        <option value="송파구">송파구</option>
-        <option value="양천구">양천구</option>
-        <option value="영등포구">영등포구</option>
-        <option value="용산구">용산구</option>
-        <option value="은평구">은평구</option>
-        <option value="종로구">종로구</option>
-        <option value="중구">중구</option>
-        <option value="중랑구">중랑구</option>
-      </select>
-    </div>
-    <div class="form-group district-list">
-      <label for="selectDistrict">동</label>
-      <select class="form-control" id="selectDistrict">
-        <!-- 강남구 동 -->
-        <option value="개포동" data-region="강남구">개포동</option>
-        <option value="논현동" data-region="강남구">논현동</option>
-        <option value="대치동" data-region="강남구">대치동</option>
-        <!-- 강동구 동 -->
-        <option value="강일동" data-region="강동구">강일동</option>
-        <option value="고덕동" data-region="강동구">고덕동</option>
-        <option value="천호동" data-region="강동구">천호동</option>
-        <!-- 강북구 동 -->
-        <option value="미아동" data-region="강북구">미아동</option>
-        <option value="수유동" data-region="강북구">수유동</option>
-        <option value="우이동" data-region="강북구">우이동</option>
-       <!-- 강서구 동 -->
-        <option value="등촌동" data-region="강서구">등촌동</option>
-        <option value="방화동" data-region="강서구">방화동</option>
-        <option value="화곡동" data-region="강서구">화곡동</option>
-        <!-- 관악구 동 -->
-        <option value="낙성대동" data-region="관악구">낙성대동</option>
-        <option value="신림동" data-region="관악구">신림동</option>
-        <option value="은천동" data-region="관악구">은천동</option>
-        <!-- 광진구 동 -->
-        <option value="구의동" data-region="광진구">구의동</option>
-        <option value="자양동" data-region="광진구">자양동</option>
-        <option value="화양동" data-region="광진구">화양동</option>
-        <!-- 구로구 동 -->
-        <option value="개봉동" data-region="구로구">개봉동</option>
-        <option value="구로동" data-region="구로구">구로동</option>
-        <option value="신도림동" data-region="구로구">신도림동</option>
-        <!-- 금천구 동 -->
-        <option value="가산동" data-region="금천구">가산동</option>
-        <option value="독산동" data-region="금천구">독산동</option>
-        <option value="시흥동" data-region="금천구">시흥동</option>
-        <!-- 노원구 동 -->
-        <option value="공릉동" data-region="노원구">공릉동</option>
-        <option value="상계동" data-region="노원구">상계동</option>
-        <option value="월계동" data-region="노원구">월계동</option>
-        <!-- 도봉구 동 -->
-        <option value="도봉동" data-region="도봉구">도봉동</option>
-        <option value="방학동" data-region="도봉구">방학동</option>
-        <option value="쌍문동" data-region="도봉구">쌍문동</option>
-        <!-- 동대문구 동 -->
-        <option value="답십리동" data-region="동대문구">답십리동</option>
-        <option value="장안동" data-region="동대문구">장안동</option>
-        <option value="회기동" data-region="동대문구">회기동</option>
-        <!-- 동작구 동 -->
-        <option value="노량진동" data-region="동작구">노량진동</option>
-        <option value="대방동" data-region="동작구">대방동</option>
-        <option value="사당동" data-region="동작구">사당동</option>
-        <!-- 마포구 동 -->
-        <option value="공덕동" data-region="마포구">공덕동</option>
-        <option value="망원동" data-region="마포구">망원동</option>
-        <option value="합정동" data-region="마포구">합정동</option>
-        <!-- 서대문구 동 -->
-        <option value="남가좌동" data-region="서대문구">남가좌동</option>
-        <option value="북가좌동" data-region="서대문구">북가좌동</option>
-        <option value="충정로동" data-region="서대문구">충정로동</option>
-        <!-- 서초구 동 -->
-        <option value="내곡동" data-region="서초구">내곡동</option>
-        <option value="반포동" data-region="서초구">반포동</option>
-        <option value="양재동" data-region="서초구">양재동</option>
-        <!-- 성동구 동 -->
-        <option value="마장동" data-region="성동구">마장동</option>
-        <option value="성수동" data-region="성동구">성수동</option>
-        <option value="용답동" data-region="성동구">용답동</option>
-        <!-- 성북구 동 -->
-        <option value="길음동" data-region="성북구">길음동</option>
-        <option value="동선동" data-region="성북구">동선동</option>
-        <option value="삼선동" data-region="성북구">삼선동</option>
-        <!-- 송파구 동 -->
-        <option value="가락동" data-region="송파구">가락동</option>
-        <option value="문정동" data-region="송파구">문정동</option>
-        <option value="잠실동" data-region="송파구">잠실동</option>
-        <!-- 양천구 동 -->
-        <option value="목동" data-region="양천구">목동</option>
-        <option value="신월동" data-region="양천구">신월동</option>
-        <option value="신정동" data-region="양천구">신정동</option>
-        <!-- 영등포구 동 -->
-        <option value="당산동" data-region="영등포구">당산동</option>
-        <option value="대림동" data-region="영등포구">대림동</option>
-        <option value="양평동" data-region="영등포구">양평동</option>
-        <!-- 용산구 동 -->
-        <option value="남영동" data-region="용산구">남영동</option>
-        <option value="용산동" data-region="용산구">용산동</option>
-        <option value="이촌동" data-region="용산구">이촌동</option>
-        <!-- 은평구 동 -->
-        <option value="녹번동" data-region="은평구">녹번동</option>
-        <option value="대조동" data-region="은평구">대조동</option>
-        <option value="역촌동" data-region="은평구">역촌동</option>
-        <!-- 종로구 동 -->
-        <option value="관철동" data-region="종로구">관철동</option>
-        <option value="삼청동" data-region="종로구">삼청동</option>
-        <option value="종로1.2.3.4가동" data-region="종로구">종로1.2.3.4가동</option>
-        <option value="종로5.6가동" data-region="종로구">종로5.6가동</option>
-        <option value="창신1동" data-region="종로구">창신1동</option>
-        <option value="창신2동" data-region="종로구">창신2동</option>
-        <option value="창신3동" data-region="종로구">창신3동</option>
-        <option value="숭인1동" data-region="종로구">숭인1동</option>
-        <option value="숭인2동" data-region="종로구">숭인2동</option>
-        <!-- 중구 동 -->
-        <option value="광희동" data-region="중구">광희동</option>
-        <option value="다산동" data-region="중구">다산동</option>
-        <option value="명동" data-region="중구">명동</option>
-        <option value="소공동" data-region="중구">소공동</option>
-        <option value="신당동" data-region="중구">신당동</option>
-        <option value="을지로동" data-region="중구">을지로동</option>
-        <!-- 중랑구 동 -->
-        <option value="망우동" data-region="중랑구">망우동</option>
-        <option value="면목동" data-region="중랑구">면목동</option>
-        <option value="묵동" data-region="중랑구">묵동</option>
-        <option value="상봉동" data-region="중랑구">상봉동</option>
-        <option value="신내동" data-region="중랑구">신내동</option>
-
-  </select>
-  <div class="button-container">
-    <button type="button" id="selectButton" class="btn btn-primary">취소</button>
-    <button type="button" id="cancelButton" class="btn btn-primary">선택</button>
+  <!-- 모달 창 -->
+  <div class="modal-content" id="myModal">
+    <span class="close">&times;</span>
+    <h2>지역 선택</h2>
+    <form id="regionForm" class="region-form">
+      <div class="form-group region-list">
+        <label for="selectRegion">구</label>
+        <select class="form-control" id="selectRegion"></select> <!-- 동적으로 삽입될 구 선택 요소 -->
+      </div>
+      <div class="form-group district-list">
+        <label for="selectDistrict">동</label>
+        <select class="form-control" id="selectDistrict"></select> <!-- 동적으로 삽입될 동 선택 요소 -->
+      </div>
+      <div class="button-container">
+        <button type="button" id="selectButton" class="btn btn-primary">선택</button>
+        <button type="button" id="cancelButton" class="btn btn-primary">취소</button>
+      </div>
+    </form>
   </div>
 
-
+<script src="/js/modal.js"></script> <!-- 모달 JavaScript 파일 추가 -->
+<script src="/js/location_data.js"></script> <!-- 구와 동 데이터를 관리하는 JavaScript 파일 추가 -->
 </body>
 </html>
