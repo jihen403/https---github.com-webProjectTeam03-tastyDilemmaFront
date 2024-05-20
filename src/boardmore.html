@@ -4,27 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>게시글 제목</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/board.css">
+    <script type="text/javascript" src="/js/common.js"></script>
+    <style>
+        /* 버튼 가운데 정렬 */
+        .button-container {
+            display: flex;
+            justify-content: center; /* 수평 가운데 정렬 */
+            margin-top: 20px;
+        }
+
+        .button-container .btn {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-    <header>
+    <header id="header">
+        <script>loadHTML("/src/common/header.html");</script>
     </header>
     <div class="container">
-        <div class="post">
+        <div class="post-title-section">
             <h2 class="post-title">게시글 제목</h2>
             <p class="post-author">작성자: 홍길동</p>
             <p class="post-date">작성일: 2024년 5월 1일</p>
-            <br><br>
+        </div>
+        <div class="post-content-section">
             <div class="post-content">
-                <p>게시글 내용이 여기에 들어갑니다. 게시글의 내용이나 정보를 자세히 보여줍니다.</p>
+                <br>
+                <p>게시글 내용이 여기에 들어갑니다.</p>
             </div>
         </div>
+        <div class="comments-section"><br><br><br>
+            <h3>댓글</h3>
+            <ul class="comment-list">
+                <li class="comment-item">
+                    <p><strong>댓글 작성자</strong></p>
+                    <p>댓글 내용이 여기에 들어갑니다.</p>
+                </li>
+            </ul>
+            <form class="comment-form">
+                <div class="form-group">
+                    <label for="comment-content">댓글 내용</label>
+                    <textarea id="comment-content" class="form-control" rows="3" placeholder="댓글 내용을 입력하세요"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">댓글 달기</button>
+            </form>
+        </div>
     </div>
-    <button type="submit" class="btn btn-primary">수정하기</button>
-    <br><br><br>
-    <button type="submit" class="btn btn-primary">목록</button>
-    <footer>
-        <p>&copy; 2024 게시판 앱</p>
+    <div class="button-container">
+        <button type="submit" class="btn btn-primary">수정하기</button>
+        <button type="submit" class="btn btn-primary">목록</button>
+    </div>
+    <footer id="footer"><br><br><br>
+        <script>loadHTML("/src/common/footer.html");</script>
     </footer>
 </body>
 </html>
