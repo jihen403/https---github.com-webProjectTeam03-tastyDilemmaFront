@@ -19,7 +19,7 @@
 			<!-- 우측 영역 -->
 			<div class="col-md-6 center-content">
 				<p class="fs-1">시작 하기</p>
-				<a href="#" id="kakao-login-btn">
+				<a href="javascript:loginWithKakao()" id="kakao-login-btn">
 					<img src="/images/kakao_login_large_narrow.png" alt="kakao login"> <!-- 카카오 로그인 버튼 -->
 				</a>
 				<footer>© 맛있는 고민 2024 All Rights Reserved</footer>
@@ -29,32 +29,7 @@
 
 	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 	<script> Kakao.init('03fdfb33b71062811cbd6ae06b7a466c'); </script>
-	<script src="./js/kakaologin.js"></script>
-
-	<script>
-		// Kakao 로그인 함수
-		function loginWithKakao() {
-			Kakao.Auth.login({
-				success: function(authObj) {
-					// 로그인 성공 시 처리할 내용
-					console.log('로그인 성공:', authObj);
-					// 수정: 로그인 성공 시 리다이렉트
-					loginSuccess();
-				},
-				fail: function(err) {
-					// 로그인 실패 시 처리할 내용
-					console.error('로그인 실패:', err);
-				}
-			});
-		}
-		// Kakao 로그인 버튼에 클릭 이벤트 추가
-		document.getElementById('kakao-login-btn').addEventListener('click', loginWithKakao);
-
-		// 수정: Kakao 로그인 성공 시 index.html로 리다이렉트
-		function loginSuccess() {
-			window.location.href = "/src/main.html";
-		}
-	</script>
-	<!-- 수정: 외부 파일 로드 함수가 정의되어 있다고 가정 -->
+	<script> console.log( Kakao.isInitialized() ); </script>
+	<script src="/js/kakaologin.js"></script>
 </body>
 </html>
