@@ -23,5 +23,26 @@ function closeModal() {
 }
 
 
+// 메시지를 수신하여 처리하는 함수 정의
+function handleMessage(event) {
+    if (event.data === 'closeIframe') {
+        // 특정 div의 display 속성을 none으로 변경
+        document.getElementById('myModal').style.display = 'none';
+    }
+}
+
+// 메시지 이벤트 리스너 등록
+window.addEventListener('message', handleMessage);
+
+// 부모 페이지로 메시지를 보내는 함수 정의
+  function sendMessageToParent(message) {
+      window.parent.postMessage(message, '*');
+  }
+  
+  // 닫기 버튼 클릭 이벤트 리스너 등록
+  document.getElementById('cancelButton').addEventListener('click', function() {
+      sendMessageToParent('closeIframe');
+  });
+
   
   
