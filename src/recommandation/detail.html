@@ -8,6 +8,67 @@
     <link rel="stylesheet" href="/css/recommandationDetail.css">
     <script type="text/javascript" src="/js/common.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+      const script = document.createElement("script");
+      script.src = "http://dapi.kakao.com/v2/maps/sdk.js?appkey=63121fc405ec95e17ac95ea8469893f8&autoload=false&libraries=clusterer,services&";
+      document.head.appendChild(script);
+      script.onload = () => {
+          kakao.maps.load(() => {
+            var mapContainer = document.getElementById('map'),
+                mapOption = {
+                    center: new kakao.maps.LatLng(33.450701, 126.570667),
+                    level: 3
+                };
+
+            var map = new kakao.maps.Map(mapContainer, mapOption);
+
+            // 장소 ID를 사용하여 장소 정보 요청
+            var placeId = '익선반주'; // 실제 장소 ID로 변경
+
+            // 장소 검색 객체 생성
+            var ps = new kakao.maps.services.Places();
+
+            // 장소 ID로 장소 정보 요청
+            ps.keywordSearch(placeId, placesSearchCB);
+
+            // 장소 검색 콜백 함수
+            function placesSearchCB(data, status, pagination) {
+                if (status === kakao.maps.services.Status.OK) {
+                    console.log(data);
+                    if (data.length > 0) {
+                        var place = data[0];
+                        var latitude = place.y;
+                        var longitude = place.x;
+                        console.log('위도:', latitude);
+                        console.log('경도:', longitude);
+
+                        // 검색된 장소 위치에 마커를 표시
+                        var marker = new kakao.maps.Marker({
+                            map: map,
+                            position: new kakao.maps.LatLng(latitude, longitude)
+                        });
+
+                        // 마커에 클릭 이벤트를 추가하여 인포윈도우를 표시
+                        kakao.maps.event.addListener(marker, 'click', function() {
+                            var infowindow = new kakao.maps.InfoWindow({zIndex:1});
+                            infowindow.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>');
+                            infowindow.open(map, marker);
+                        });
+
+                        // 지도 중심을 검색된 장소의 위치로 이동
+                        map.setCenter(new kakao.maps.LatLng(latitude, longitude));
+                    } else {
+                        console.log('검색된 장소가 없습니다.');
+                    }
+                } else {
+                    console.error('Error: ' + status);
+                }
+            }
+        });
+      };
+    </script>
 </head>
 <body>
   <header id="header">
@@ -21,8 +82,15 @@
           <button class="btn btn-primary" type="button" id="button-addon2">랜덤으로 돌리기</button>
         </div>
       </section>
-      <section>
-        슬라이드 자리
+      <section class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">이미지 넣을 예정</div>
+            <div class="swiper-slide">이미지 넣을 예정</div>
+            <div class="swiper-slide">이미지 넣을 예정</div>
+            <div class="swiper-slide">이미지 넣을 예정</div>
+            <div class="swiper-slide">이미지 넣을 예정</div>
+          </div>
+          <div class="swiper-pagination"></div>
       </section>
       <section class="top_container">
         <div class="img_container"></div>
@@ -48,34 +116,40 @@
             <a class="nav-link" data-bs-toggle="tab" href="#review" aria-selected="false" role="tab">리뷰</a>
           </li>
           <li class="nav-item" role="presentation">
-            <a class="nav-link" data-bs-toggle="tab" href="#map" aria-selected="false" role="tab">지도</a>
+            <a class="nav-link" data-bs-toggle="tab" href="#location" aria-selected="false" role="tab">지도</a>
           </li>
         </ul>
         <div class="tab-content">
-          <div class="tab-pane fade active show" id="home" role="tabpanel">
+          <div class="tab-pane fade active show detail_info" id="home" role="tabpanel">
             <h6 class="text-dark">상세 정보</h6>
             <p>
-              <em>위치</em>
+              <em class="location">위치</em>
               <span>
                 서울 종로구 돈화문로11다길 31 1층 (우)03133 <br>
                 지번 | 익선동 166-21
               </span>
             </p>
             <p>
-              <em>브레이크타임</em>
+              <em class="hour">영업전</em>
               <span>
                 매일 12:00 ~ 22:00 <br>
                 월~금 휴게시간 15:00 ~ 16:00
               </span>
             </p>
             <p>
-              <a href="http://www.instagram.com/banjoo__iksun" target="_blank" rel="noopener noreferrer"></a>
+              <em class="insta">인스타그램</em>
+              <a href="http://www.instagram.com/banjoo__iksun" target="_blank" rel="noopener noreferrer">
+                http://www.instagram.com/banjoo__iksu
+              </a>
             </p>
             <p>
-              <em>대표번호</em>
+              <em class="num">대표번호</em>
               <span>02-529-3979</span>
             </p>
-            <p>예약가능</p>
+            <p>
+              <em class="reservation">예약</em>
+              예약가능
+            </p>
 
           </div>
           <div class="tab-pane fade" id="profile" role="tabpanel">
@@ -141,43 +215,56 @@
               </li>
             </ul>
           </div>
-          <div class="tab-pane fade map" id="map" role="tabpanel">
+          <div class="tab-pane fade map" id="location" role="tabpanel">
             <h6 class="text-dark">찾아가는 길</h6>
-            <div>
-              <img width="100%" height="auto" src="/images/temp_map.PNG" alt="지도" />
+            <div class="map_cotent" id="map">
             </div>
             <h6 class="text-dark">지하철 역</h6>
             <div>
-              <ul>
-                <li>종로3가역5호선1호선3호선 | 6번 출구 도보 3분</li>
-                <li>종각역1호선 | 11번 출구 도보 11분</li>
+              <ul class="subway_list">
+                <li>종로3가역
+                  <span style="background-color: #8936e0;" class="subway">5</span>
+                  <span style="background-color: #263c96;" class="subway">1</span>
+                  <span style="background-color: #F06E00;" class="subway">3</span>
+                  <span class="bar">|</span>
+                   
+                   6번 출구 도보 3분</li>
+                <li>종각역 <span style="background-color: #263c96;" class="subway">1</span> 
+                  <span class="bar">|</span>
+                  11번 출구 도보 11분
+                </li>
+                <li>안국역 
+                  <span style="background-color: #F06E00;" class="subway">3</span>
+                  <span class="bar">|</span>  
+                  4번 출구 도보 9분
+                </li>
               </ul>
-              <ol>
-                <li>안국역3호선 | 4번 출구 도보 9분</li>
-              </ol>
             </div>
             <h6 class="text-dark">버스 정류장</h6>
-            <ul>
-              <li>종로1.2.3.4가동주민센터(01557) | 104m
-                마을
+            <ol class="bus_list">
+              <li>
+                <p>종로1.2.3.4가동주민센터(01557) <span class="bar">|</span> <small>104m</small> </p>
+                <span class="bus_town">마을</span>
                 종로12
                 </li>
                 <li>
-                  종로사우나(01790) | 234m
-                마을
+                  <p>종로사우나(01790) <span class="bar">|</span> <small>234m</small></p>
+                  <span class="bus_town">마을</span>
+                
                 종로01
 
                 </li>
                 <li>
-                  낙원상가(01589) | 261m
-                  마을 종로01|종로02
+                  <p>낙원상가(01589) <span class="bar">|</span> <small>261m</small></p>
+                  <span class="bus_town">마을</span>
+                   종로01 <span class="bar">|</span> 종로02
                 </li>
                 <li>
-                  종로3가.1.3.5호선(01550) | 278m
-                  마을
+                  <p>종로3가.1.3.5호선(01550) <span class="bar">|</span> <small>278m</small></p>
+                  <span class="bus_town">마을</span>
                   종로12
                 </li>
-            </ul>
+            </ol>
           </div>
         </div>
       </section>
@@ -186,5 +273,15 @@
   <footer class="text-lg-center py-lg-2" id="footer">
       <script>loadHTML("/src/common/footer.html");</script>
   </footer>
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  </script>
 </body>
 </html>
