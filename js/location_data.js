@@ -59,3 +59,4 @@ updateDistricts(selectRegion.value);
 selectRegion.addEventListener('change', () => {
   updateDistricts(selectRegion.value);
 });
+

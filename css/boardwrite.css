@@ -71,12 +71,17 @@ button[type="submit"] {
   display: flex;
   justify-content: flex-start; /* 왼쪽 정렬 */
 }
+
 .container {
-  background: white;
+  max-width: 800px;
+  width: 100%;
+  background: #ece6cc; /* 전체 웹페이지 배경색 변경 */
   padding: 2rem;
   border-radius: 0.5rem;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  text-align: center;
 }
+
 
 h1 {
   font-size: 2rem;

@@ -12,5 +12,5 @@ function kakaoLogout() {
 
 // Kakao 아웃 성공 시 index.html로 리다이렉트
 function logoutSuccess() {
-  window.location.href = "/index.html";
+  window.location.href = "/";
 }

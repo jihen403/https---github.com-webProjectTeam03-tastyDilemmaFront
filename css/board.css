@@ -1,14 +1,10 @@
-body {
-  background-color: #f4f4f4;
-}
-
 .container {
   max-width: 800px;
   margin: 0 auto;
   padding: 15px 0;
 }
 .post {
-  background-color: #fff;
+  background-color: ece6cc;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
@@ -41,7 +37,7 @@ body {
   margin-left: -1px;
   line-height: 1.25;
   color: #007bff;
-  background-color: #fff;
+  background-color: ece6cc;
   border: 1px solid #dee2e6;
   border-radius: 0.25rem;
   text-decoration: none;
