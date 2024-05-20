@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+    <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=7f3cb3fcd372ae404bd9ac1133fcc35a&libraries=services"></script>
+    <script src="mapcircle.js" defer></script>
+</head>
+<body>
+    <div id="map" style="width:100%;height:450px;"></div>
+    <div align="center"><p id="searchingText"></p></div>
+    <script src="searching.js" defer></script>
+    <script>
+        
+        setTimeout(function() {
+            window.location.href = "/mapresult";
+        }, 7000);
+    </script>
+</body>
+</html>
