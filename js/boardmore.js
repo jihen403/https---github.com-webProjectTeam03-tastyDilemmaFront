@@ -27,6 +27,36 @@ document.addEventListener('DOMContentLoaded', function() {
       newComment.appendChild(authorParagraph);
       newComment.appendChild(contentParagraph);
 
+      // 답글 폼 추가
+      const replyForm = document.createElement('form');
+      replyForm.classList.add('comment-form');
+      replyForm.innerHTML = `
+          <div class="form-group">
+              <label for="reply-content">답글 작성</label>
+              <textarea id="reply-content" class="form-control" rows="3" placeholder="답글 내용을 입력하세요"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">등록</button>
+          <button type="button" class="btn btn-secondary cancel-reply">취소</button>
+      `;
+
+      // 취소 버튼 클릭 시 답글 폼 제거
+      replyForm.querySelector('.cancel-reply').addEventListener('click', function() {
+          replyForm.remove();
+      });
+
+      // 답글 폼 제출 시 처리
+      replyForm.addEventListener('submit', function(event) {
+          event.preventDefault();
+          const replyContent = replyForm.querySelector('#reply-content').value;
+          console.log('답글 내용:', replyContent);
+          // 여기서 서버에 답글을 전송하는 등의 로직을 추가하면 됩니다.
+
+          // 답글 폼 제거
+          replyForm.remove();
+      });
+
+      newComment.appendChild(replyForm);
+
       commentList.appendChild(newComment);
 
       contentInput.value = '';
