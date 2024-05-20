@@ -23,14 +23,18 @@
         <select class="form-control" id="selectDistrict"></select> <!-- 동적으로 삽입될 동 선택 요소 -->
       </div>
       <div class="button-container">
-        <button type="button" id="selectButton" class="btn btn-primary">선택</button>
+        <!-- 선택 버튼 클릭 시  열기 -->
+        <button id="selectButton" type="button" class="btn btn-primary">선택</button>
         <button onclick="closeModal()" type="button" id="cancelButton" class="btn btn-primary">취소</button>
+
       </div>
     </form>
-  </div>
+      <!-- 맛집을 표시할 요소 -->
+      <div id="restaurantRecommendation" class="restaurant-recommendation"></div>
+      </div>
 
 <script src="/js/modal.js"></script> <!-- 모달 JavaScript 파일 추가 -->
 <script src="/js/location_data.js"></script> <!-- 구와 동 데이터를 관리하는 JavaScript 파일 추가 -->
-
+<script src="/js/restaurant.js"></script> <!-- 맛집 데이터를 관리하는 JavaScript 파일 추가 -->
 </body>
 </html>
