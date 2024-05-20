@@ -75,7 +75,7 @@ button[type="submit"] {
 .container {
   max-width: 800px;
   width: 100%;
-  background: #ece6cc; /* 전체 웹페이지 배경색 변경 */
+  background: #fff; /* 전체 웹페이지 배경색 변경 */
   padding: 2rem;
   border-radius: 0.5rem;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
@@ -106,4 +106,12 @@ h1 {
 .btn-secondary:hover {
   background-color: #ffffff;
   border-color: #000000;
+}
+
+#in_title {
+  width: 100%;
+}
+
+.title {
+  max-width: 100%;
 }
