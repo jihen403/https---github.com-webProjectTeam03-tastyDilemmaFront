@@ -62,7 +62,7 @@ body {
 .search-box {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .search-txt {
   padding: 10px;
@@ -90,5 +90,6 @@ align-items: flex-end; /* 버튼을 오른쪽으로 정렬 */
 }
 
 .btn-group-vertical .btn {
-margin-bottom: 5px;
+margin-bottom: 10px;
+
 }
