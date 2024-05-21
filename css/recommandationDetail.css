@@ -3,10 +3,24 @@ main {
   background: #f3f3f3;
 }
 
+.btn_container {
+  display: flex;
+  justify-content: end;
+  height: 58px;
+  margin-bottom: 15px;
+}
+.btn_container .dislike_btn {
+  margin-left: 15px;
+}
+
+.btn_container .input-group {
+  width: 290px;
+  height: 100%;
+}
+
 .main_container {
   width: 800px;
   margin: 0 auto;
-  background-color: #fff;
 }
 
 .main_container ul, .main_container ol {
@@ -23,11 +37,11 @@ main {
   letter-spacing: -2px;
 }
 
-.main_container .map h6 {
+.main_container .location h6 {
   margin: 10px 0;
 }
 
-.main_container .map h6:first-child {
+.main_container .location h6:first-child {
   margin: 0 0 5px;
 } 
 
@@ -37,7 +51,7 @@ main {
 }
 
 .top_container {
-  margin-bottom: 40px;
+  background-color: #fff;
 }
 
 .title_container {
@@ -68,8 +82,11 @@ main {
   padding: 12px 0;
 }
 
-.tab-content {
+.tab-content > .tab-pane {
+  margin-bottom: 15px;
   padding: 25px 79px;
+  background-color: #fff;
+  border-radius: 5px;
 }
 
 .breadcrumb {
@@ -102,6 +119,46 @@ main {
 .menu_list .food_image img {
   width: 100%;
   height: auto;
+}
+
+.detail_info p {
+  display: flex;
+  margin: 10px 0;
+}
+
+.detail_info span, .detail_info p, .detail_info span, .detail_info a {
+  font-size: 0.92em;
+}
+
+.detail_info em {
+  display: block;
+  width: 20px;
+  height: 20px;
+  font-size: 0px;
+  font-style: normal;
+  background: url("/images/recomm_ico_detail.png") no-repeat;
+  background-size: auto 100%;
+  background-position: left top;
+}
+
+.detail_info em.location {
+  background-position: -40px 1px;
+}
+
+.detail_info em.hour {
+  background-position: -60px 1px;
+}
+
+.detail_info em.insta {
+  background-position: -80px 1px;
+}
+
+.detail_info em.num {
+  background-position: -100px 1px;
+}
+
+.detail_info em.reservation {
+  background-position: -120px 1px;
 }
 
 .review_list {
@@ -143,4 +200,95 @@ main {
   text-overflow: ellipsis;
   white-space: nowrap;
   vertical-align: middle;
+}
+
+.subway_list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.subway_list li {
+  width: 50%;
+}
+
+.subway {
+  display: inline-block;
+  vertical-align: baseline;
+  min-width: 18px;
+  height: 18px;
+  margin: 1px 4px 0 0;
+  padding: 0 5px;
+  border-radius: 9px;
+  box-sizing: border-box;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #fff;
+  line-height: 18px;
+  text-align: center;
+}
+
+.bar {
+  display: inline-block;
+  width: 1px;
+  height: 15px;
+  margin-right: 4px;
+  text-indent: -9999px;
+  vertical-align: middle;
+  background: #ddd;
+}
+
+.bus_town {
+  display: inline-block;
+  padding: 1px 3px;
+  color: #fff;
+  font-size: 0.685rem;
+  background-color: #5fb73c;
+  border-radius: 5px;
+  border: 1px solid #53a135;
+}
+
+.bus_list p {
+  display: inline-block;
+  width: 50%;
+}
+
+.bus_list .bar {
+  margin-left: 4px;
+  margin-bottom: 3px;
+}
+
+html,
+body {
+  position: relative;
+}
+
+.swiper {
+  height: 150px;
+  margin-bottom: 15px;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 18px;
+  background: #ececec;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.map_cotent {
+  width: 100%;
+  height: 400px;
 }

@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>게시판 목록</title>
     <link rel="stylesheet" href="/css/bootstrap.css">
-    <link rel="stylesheet" href="/css/board.css">
+    <link rel="stylesheet" href="/css/main_page.css">
+    <link rel="stylesheet" href="/css/modal.css"> <!-- 모달 CSS 파일 추가 -->
     <script type="text/javascript" src="/js/common.js"></script>
     
 </head>
@@ -13,8 +14,8 @@
     <header id="header">
         <script>loadHTML("/src/common/header.html");</script>
     </header>
-    <div style="background-color: #ece6cc;">    
-    <div style="background-color: ece6cc;" class="container">
+    <div style="background-color: #f3f3f3;">    
+    <div class="container">
         <h1 style="color: black; font-weight: normal;">게시판 </h1>
         <!-- 검색 폼 -->
         <div style="text-align: right;">
@@ -27,7 +28,7 @@
         
         <br><br>
         <div class="btn-group-vertical">
-            <a style="color: 6c757d;" href="boardwrite.html" class="btn ">글쓰기</a>
+            <a style="color: 6c757d;" href="boardwrite.html" class="btn btn-dark">글쓰기</a>
         </div><br>
         <div class="post">
             <style>
@@ -36,7 +37,7 @@
                     border-radius: 5px; /* 테두리의 모서리를 둥글게 만듭니다. */
                     padding: 5px; /* 테두리와 내용 사이에 간격을 만듭니다. */
                     margin-bottom: 10px; /* 다음 게시물과의 간격을 조정합니다. */
-                    background-color: rgb(231, 249, 255);
+                    background-color: #fff;
                 }
             </style>
             <h2 class="post-title">[맛집 같이 갈 유저 모집] 서울</h2>

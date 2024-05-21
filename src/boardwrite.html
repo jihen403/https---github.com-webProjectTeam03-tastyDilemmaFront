@@ -24,7 +24,7 @@
 }
 
     </style>
-    <div style="background-color: #ece6cc;">  
+    <div style="background-color: #f3f3f3;padding: 30px 0;"> 
     <div bgcolor="ece6cc" class="container mt-5">
         
         <div>
@@ -32,10 +32,9 @@
         <form id="write-form" enctype="multipart/form-data" class="mb-5">
         <div id="in_title">
 
-            <textarea name="title" id="utitle" rows="1" cols="55" placeholder="제목" maxlength="100" required=""></textarea>
+            <textarea class="title" name="title" id="utitle" rows="1" cols="55" placeholder="제목" maxlength="100" required=""></textarea>
         </div>
         <br>
-        <img src="/images/mail.jfif" alt="mail" width="150" height="120">
         <div id="in_content">
         <textarea name="content" id="ucontent" placeholder="내용" required=""></textarea>
         </div>
@@ -43,7 +42,7 @@
                 <label style="color: black;" for="file" class="form-label">파일 첨부:</label>
                 <input type="file" id="file" name="file" accept="image/*" class="form-control">
             </div>
-            <p class="post-author">작성자:"홍길동"</p>
+            <!-- <p class="post-author">작성자:"홍길동"</p> -->
             <div class="mb-4">
                 <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
                     <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked value="public">
