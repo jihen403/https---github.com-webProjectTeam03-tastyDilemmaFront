@@ -7,18 +7,51 @@ document.addEventListener('DOMContentLoaded', () => {
   // 모달 닫기 버튼 (x 버튼) 요소를 가져옴
   const closeBtn = document.querySelector('.close');
   // 선택 버튼 요소를 가져옴
-  const selectButton = document.getElementById('selectButton');
 
-  // 선택 버튼 클릭 시 페이지로 이동하는 함수 등록
-  selectButton.addEventListener('click', openRecommendationDetail);
+
+  // 카테고리 선택 버튼 클릭 시 동작 정의
+  const categorySelectButton = document.getElementById('categorySelectButton');
+
+  categorySelectButton.addEventListener('click', () => {
+    document.getElementById('myModal2').style.display = 'none';
+    document.getElementById('myModal3').style.display = 'block';
+    // 추가 동작을 여기에 추가
+  });
+
+  // 모든 닫기 버튼에 대한 이벤트 리스너 등록
+  const cancelButtons = document.querySelectorAll('.btn-primary');
+  cancelButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      sendMessageToParent('closeIframe');
+    });
+  });
+
+ // 취소 버튼 클릭 이벤트 리스너 등록
+const cancelButton1 = document.getElementById('cancelButton1');
+cancelButton1.addEventListener('click', () => {
+  closeModal();
+    // 메시지를 수신하여 처리하는 함수 정의
+    window.addEventListener('message', handleMessage);
 });
 
-// 모달 열기
+const cancelButton2 = document.getElementById('cancelButton2');
+    cancelButton2.addEventListener('click', () => {
+      closeModal('myModal2');
+    });
+});
+
+// 모달 열기 함수
 function openModal() {
-  document.getElementById("myModal").style.display = "block";
+  const overlay = document.getElementById('overlay');
+  const modal = document.getElementById('myModal');
+  modal.style.display = "block";
+
+  if(overlay) {
+    overlay.style.display = 'block'; // 오버레이를 보이도록 설정
+  }
 }
 
-// 모달 닫기
+// 모달 닫기 함수 수정
 function closeModal() {
   document.getElementById("myModal").style.display = "none";
 }
@@ -27,47 +60,21 @@ function closeModal() {
 function handleMessage(event) {
   if (event.data === 'closeIframe') {
     // 특정 div의 display 속성을 none으로 변경
-    document.getElementById('myModal').style.display = 'none';
+    const modal = document.getElementById('myModal');
+    if (modal) {
+      modal.style.display = 'none';
+    }
+    window.removeEventListener('message', handleMessage, false);
   }
 }
-
-// 메시지 이벤트 리스너 등록
-window.addEventListener('message', handleMessage);
-
 // 부모 페이지로 메시지를 보내는 함수 정의
 function sendMessageToParent(message) {
   window.parent.postMessage(message, '*');
 }
 
-// 닫기 버튼 클릭 이벤트 리스너 등록
-document.getElementById('cancelButton').addEventListener('click', function() {
-  sendMessageToParent('closeIframe');
-});
- 
-// 선택 버튼 클릭 이벤트 핸들러 등록
-document.getElementById('selectButton').addEventListener('click', function() {
-  // 모달을 닫습니다.
-  closeModal();
+  // 메시지를 수신하여 처리하는 함수 정의
+  window.addEventListener('message', handleMessage);  
 
-  // 선택한 지역 정보를 가져옵니다.
-  const selectedRegion = document.getElementById('selectRegion').value;
-  const selectedDistrict = document.getElementById('selectDistrict').value;
 
-  // 선택한 지역 정보를 URL 파라미터 형식으로 만듭니다.
-  const queryParams = `?region=${selectedRegion}&district=${selectedDistrict}`;
 
-  // 선택한 지역 정보를 포함하여 새로운 페이지로 이동합니다.
-  window.location.href = `/src/recommandation/detail.html${queryParams}`;
-});
 
- // 선택 버튼 클릭 시 모달을 닫고 페이지로 이동하는 함수 등록
- selectButton.addEventListener('click', () => {
-  closeModal(); // 모달을 닫음
-  openRecommendationDetail(); // 페이지로 이동
-});
-
-// 선택 버튼 클릭 시 현재 창으로 이동하는 함수
-function openRecommendationDetail() {
-  // 새로운 페이지로 이동
-  window.location.href = "/src/recommandation/detail.html"; // 변경할 페이지의 URL로 수정하세요
-}
