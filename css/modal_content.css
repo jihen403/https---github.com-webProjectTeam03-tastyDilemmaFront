@@ -52,7 +52,7 @@ h2 {
 }
 
 /* 선택 버튼, 취소 버튼 */
-#selectButton, #cancelButton {
+#selectButton, #categorySelectButton, #recommendButton, #cancelButton1, #cancelButton2, #cancelButton3 {
   background-color: #210fc9;
   color: #ffffff;
   border: none;
@@ -62,9 +62,6 @@ h2 {
   cursor: pointer;
 }
 
-#cancelButton {
-  margin-left: 16px;
-}
 
 /* 버튼 컨테이너 */
 .button-container {
