@@ -6,7 +6,7 @@ main {
 .btn_container {
   display: flex;
   justify-content: end;
-  height: 58px;
+  height: 44px;
   margin-bottom: 15px;
 }
 .btn_container .dislike_btn {
@@ -26,6 +26,7 @@ main {
 .main_container ul, .main_container ol {
   margin: 0px;
   padding: 0px;
+  border: none;
 }
 
 .main_container ul li, .main_container ol li {
@@ -57,7 +58,7 @@ main {
 .title_container {
   position: relative;
   margin: -21px 30px 0px;
-  padding: 25px 0;
+  padding: 25px 0 10px;
   text-align: center;
   background: #fff url("../images/bg_shadow_bottom.png") no-repeat 0 100%;
   background-size: contain;
@@ -65,7 +66,6 @@ main {
 }
 
 .title_container h2 {
-  margin-bottom: 20px;
   color: #333;
 }
 
