@@ -59,7 +59,7 @@ if (navigator.geolocation) {
        location: new kakao.maps.LatLng(lat, lng),
        radius: 500
         };
-        ps.categorySearch('BK9', placesSearchCB, {useMapBounds:true}); 
+        ps.categorySearch('FD6', placesSearchCB, {useMapBounds:true}); 
     }, () => {
         console.error('사용자 위치를 가져올 수 없습니다.');
     });
