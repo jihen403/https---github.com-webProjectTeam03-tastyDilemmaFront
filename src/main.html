@@ -41,8 +41,18 @@
     <footer class="text-lg-center py-lg-2" id="footer">
       <script>loadHTML("/src/common/footer.html");</script>
     </footer>
-  
-    <script type="text/javascript" src="/js/modal.js"></script> <!-- 모달 JavaScript 파일 추가 -->
-  
+    <script>
+      // 모달 열기 함수
+      function openModal() {
+        const overlay = document.getElementById('overlay');
+        const modal = document.getElementById('myModal');
+        modal.style.display = "block";
+
+        if(overlay) {
+          overlay.style.display = 'block'; // 오버레이를 보이도록 설정
+        }
+      }
+    </script>
+    <!--<script type="text/javascript" src="/js/opencloseModal.js"></script> --> <!-- 모달 JavaScript 파일 추가 -->
   </body>
 </html>
