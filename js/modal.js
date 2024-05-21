@@ -19,6 +19,21 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+function recommand(){
+  // 카테고리 선택 버튼 클릭 시 동작 정의
+  const recommendButton = document.getElementById('recommendButton');
+
+  recommendButton.addEventListener('click', () => {
+    const parentModal = window.parent.document.getElementById('myModal');
+    if (parentModal) {
+      parentModal.style.display = "none";
+      document.getElementById('myModal2').style.display = 'none';
+      document.getElementById('myModal3').style.display = 'none';
+      document.getElementById('myModal1').style.display = 'block';
+    }
+  });
+}
+
 
 
 
