@@ -12,6 +12,18 @@
     <header id="header">
         <script>loadHTML("/src/common/header.html");</script>
     </header>
+    
+    <style>
+        .custom-width {
+    width: 55%; /* 원하는 너비로 조정 */
+    margin: 0 auto; /* 중앙 정렬 */
+}
+
+.btn-group .btn {
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+}
+
+    </style>
     <div style="background-color: #ece6cc;">  
     <div bgcolor="ece6cc" class="container mt-5">
         
@@ -34,10 +46,10 @@
             <p class="post-author">작성자:"홍길동"</p>
             <div class="mb-4">
                 <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked="" value="public">
-                    <label style="color: 6c757d;" class="btn btn-outline-primary" for="btnradio1">전체 공개</label>
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked value="public">
+                    <label class="btn btn-outline-primary" for="btnradio1">전체 공개</label>
                     <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" value="member">
-                    <label style="color: 6c757d;" class="btn btn-outline-primary" for="btnradio2">멤버 공개</label>
+                    <label class="btn btn-outline-primary" for="btnradio2">멤버 공개</label>
                 </div>
             </div>
             <div class="btn-group-vertical">
@@ -45,7 +57,7 @@
             </div>
         </form>
 
-        <div class="btn-group-vertical w-100">
+        <div class="btn-group-vertical custom-width">
             <button type="button" class="btn btn-secondary mb-2">유저 맛집 추천</button>
             <button type="button" class="btn btn-secondary mb-2">맛집 같이 갈 유저 모집</button>
             <button type="button" class="btn btn-secondary">유저의 맛집 리뷰</button>
