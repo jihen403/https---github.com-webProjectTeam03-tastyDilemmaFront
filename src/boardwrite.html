@@ -32,35 +32,50 @@
         <form id="write-form" enctype="multipart/form-data" class="mb-5">
         <div id="in_title">
 
-            <textarea class="title" name="title" id="utitle" rows="1" cols="55" placeholder="제목" maxlength="100" required=""></textarea>
-        </div>
-        <br>
-        <div id="in_content">
-        <textarea name="content" id="ucontent" placeholder="내용" required=""></textarea>
-        </div>
-            <div class="mb-3">
-                <label style="color: black;" for="file" class="form-label">파일 첨부:</label>
-                <input type="file" id="file" name="file" accept="image/*" class="form-control">
-            </div>
-            <!-- <p class="post-author">작성자:"홍길동"</p> -->
-            <div class="mb-4">
-                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked value="public">
-                    <label class="btn btn-outline-primary" for="btnradio1">전체 공개</label>
-                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" value="member">
-                    <label class="btn btn-outline-primary" for="btnradio2">멤버 공개</label>
+            <div class="row">
+                <div class="col-md-4" style="width: 50%;">
+                    <label for="exampleSelect1" class="form-label mt-4"></label>
+                    <select class="form-select" id="exampleSelect1">
+                        <option>게시판을 선택해 주세요.</option>
+                        <option>유저 맛집 추천</option>
+                        <option>맛집 같이 갈 유저 모집</option>
+                        <option>유저의 맛집 리뷰</option>
+                    </select>
+                </div>
+                <div class="col-md-4" style="width: 50%;">
+                    <label for="exampleSelect2" class="form-label mt-4"></label>
+                    <select class="form-select" id="exampleSelect2">
+                        <option>공개 범위를 선택해주세요</option>
+                        <option>전체 공유</option>
+                        <option>멤버 공유</option>
+                    </select>
+                </div>
+            </div><br>
+            
+            <div style="position: relative;">
+                <div class="btn-group-vertical position-absolute" style="top: -130px; right: 0;">
+                    <a style="background-color: #ffffff; color: #000000; font-size: 0.8rem; border: 1px solid #dee2e6;" href="board.html" class="btn btn-primary">글쓰기</a>
                 </div>
             </div>
-            <div class="btn-group-vertical">
-                <a style="color: 6c757d;" href="board.html" class="btn btn-primary">글쓰기</a>
-            </div>
+            
+            
+            
+        
+
+            <textarea style="border: 1px solid #dee2e6;" class="title" name="title" id="utitle" rows="1" cols="55" placeholder="제목을 입력해 주세요." maxlength="100" required=""></textarea>
+        <br>
+        <div id="in_content">
+        <textarea style="border: 1px solid #dee2e6;" name="content" id="ucontent" placeholder="내용" required=""></textarea>
+        </div>
+        <div class="mb-3" style="width: 100% !important;">
+            <label style="color: black; width: 100%;" for="file" class="form-label"></label>
+            <input type="file" id="file" name="file" accept="image/*" class="form-control" style="border: 1px solid #dee2e6;">
+        </div>
+        
+            <!-- <p class="post-author">작성자:"홍길동"</p> -->
+
         </form>
 
-        <div class="btn-group-vertical custom-width">
-            <button type="button" class="btn btn-secondary mb-2">유저 맛집 추천</button>
-            <button type="button" class="btn btn-secondary mb-2">맛집 같이 갈 유저 모집</button>
-            <button type="button" class="btn btn-secondary">유저의 맛집 리뷰</button>
-        </div>
         </div>
     </div>
 

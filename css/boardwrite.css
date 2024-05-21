@@ -1,7 +1,4 @@
-label, input[type="text"], textarea, input[type="file"], button {
-  font-size: 20px; /* 원하는 폰트 크기로 설정 */
-}
-
+/* 공통 스타일 */
 .container {
   max-width: 800px;
   width: 100%;
@@ -11,14 +8,17 @@ label, input[type="text"], textarea, input[type="file"], button {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
+
 h1, h2 {
   margin: 10px 0;
 }
+
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 input[type="text"], textarea, input[type="file"] {
   width: 100%;
   max-width: 600px;
@@ -27,6 +27,7 @@ input[type="text"], textarea, input[type="file"] {
   border: 1px solid #000000;
   border-radius: 4px;
 }
+
 button[type="submit"] {
   padding: 10px 20px;
   background-color: #000000;
@@ -35,83 +36,58 @@ button[type="submit"] {
   border-radius: 4px;
   cursor: pointer;
 }
-.btn-group {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-.btn-group-vertical {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
-}
+
 .btn-group-vertical .btn {
   width: 100%;
   max-width: 600px;
   margin-bottom: 5px;
 }
 
-/* 제목 입력 박스 크기 조정 */
-.title-input {
-  max-width: 50%; /* 제목 입력 박스의 너비를 50%로 설정 */
-}
-
-/* 내용 입력 박스 크기 조정 */
-#ucontent {
-  width: 100%; /* 내용 입력 박스의 너비를 100%로 설정 */
-  max-width: 800px; /* 최대 너비를 800px로 설정 */
-  height: 300px; /* 높이 설정 */
-  margin-left: auto; /* 왼쪽 정렬 */
-}
-
-/* 부모 요소의 스타일 조정 */
-#in_content {
-  width: 100%;
-  display: flex;
-  justify-content: flex-start; /* 왼쪽 정렬 */
-}
-
-.container {
-  max-width: 800px;
-  width: 100%;
-  background: #fff; /* 전체 웹페이지 배경색 변경 */
-  padding: 2rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  text-align: center;
-}
-
-
-h1 {
-  font-size: 2rem;
-  color: #343a40;
-}
-
-.btn-primary {
+/* 추가된 스타일 */
+.btn-group-vertical .btn-primary {
   background-color: #007bff;
   border-color: #007bff;
 }
 
-.btn-primary:hover {
+.btn-group-vertical .btn-primary:hover {
   background-color: #0056b3;
   border-color: #0056b3;
 }
 
-.btn-secondary {
+.btn-group-vertical .btn-secondary {
   background-color: #6cb3ff;
   border-color: #6c757d;
 }
 
-.btn-secondary:hover {
+.btn-group-vertical .btn-secondary:hover {
   background-color: #ffffff;
   border-color: #000000;
 }
 
-#in_title {
+/* 파일 업로드 입력란 스타일 */
+input[type="file"] {
   width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  background-color: #ffffff;
 }
 
-.title {
-  max-width: 100%;
+/* 제목 입력란 스타일 */
+.title-input {
+  max-width: 50%;
+}
+
+/* 내용 입력란 스타일 */
+#ucontent {
+  width: 100%;
+  max-width: 800px;
+  height: 300px;
+  margin-left: auto;
+}
+
+/* 입력 요소의 스타일 */
+label, input[type="text"], textarea, input[type="file"], button {
+  font-size: 20px;
 }
