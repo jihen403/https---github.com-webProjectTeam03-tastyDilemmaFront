@@ -15,8 +15,8 @@
   <!-- 첫 번째 모달 (지역 선택) -->
   <div id="myModal1" class="modal" style="display: block;">
     <div class="modal-content">
-     <!--<span class="close" onclick="closeModal('myModal1')">&times;</span>
---> 
+     <span class="close" onclick="closeModal('myModal1')">&times;</span>
+ 
            <h2>지역 선택</h2>
       <form id="regionForm" class="region-form">
         <div class="form-group region-list">
@@ -39,11 +39,11 @@
   <!-- 두 번째 모달 (카테고리 선택) -->
 <div id="myModal2" class="modal" style="display: none;">
   <div class="modal-content">
-    <!-- <span class="close" onclick="closeModal('myModal2')">&times;</span> -->
+    <span class="close" onclick="closeModal('myModal2')">&times;</span>
     <h2>카테고리 선택</h2>
     <form id="categoryForm" class="category-form">
-      <div class="form-group category-list">
-        <label>카테고리</label>
+      <div class="form-group category-list" style="text-align: left;">
+        
         <div class="custom-checkbox">
           <input type="checkbox" id="category1" name="category" value="한식">
           <label for="category1">한식</label>
@@ -61,8 +61,8 @@
           <label for="category4">양식</label>
         </div>
         <div class="custom-checkbox">
-          <input type="checkbox" id="category5" name="category" value="분식">
-          <label for="category5">분식</label>
+          <input type="checkbox" id="category5" name="category" value="패스트푸드">
+          <label for="category5">패스트푸드</label>
         </div>
       </div>
       <div class="button-container">
@@ -76,7 +76,7 @@
 <!-- 세 번째 모달 (맛집 추천) -->
 <div id="myModal3" class="modal" style="display: none;">
   <div class="modal-content">
-    <!-- <span class="close" onclick="closeModal('myModal3')">&times;</span> -->
+    <span class="close" onclick="closeModal('myModal3')">&times;</span>
     <h2>랜덤 맛집 추천</h2>
     <div id="recommendedRestaurants">
       <!-- 추천된 맛집 정보가 여기에 표시될 것입니다 -->
